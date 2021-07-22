@@ -6,4 +6,6 @@
         <h2 class="text-xl text-gray-600">Fórmate en tecnología</h2>
         <h3 class="text-lg text-gray-600">70% de los graduados duplican su salario</h3>
     </div>
+
+    @livewire('course-list')
 @endsection
