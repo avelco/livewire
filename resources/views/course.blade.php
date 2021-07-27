@@ -27,6 +27,11 @@
                 <p class="text-gray-500 text-sm"> {{ $course->user->name }} </p>
                 <p class="text-gray-300 xs"> {{ $course->created_at->diffForHumans() }} </p>
             </div>
+            <div class="grid grid-cols-2 gap-4 my-8">
+                @foreach ($course->similars() as $course)
+                    <x-course-card :course="$course"/>
+                @endforeach
+            </div>
         </div>
     </div>
 

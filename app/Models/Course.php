@@ -19,6 +19,11 @@ class Course extends Model
         return $this->hasMany(Post::class);
     }
 
+    public function similars()
+    {
+        return $this->where('category_id', $this->category_id)->with('user')->take(2)->get();
+    }
+
     public function getExcerptAttribute()
     {
         return substr($this->description, 0, 80). "...";
